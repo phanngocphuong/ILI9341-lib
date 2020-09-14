@@ -158,10 +158,10 @@ OBJECTS += $(addprefix $(BUILD_DIR)/,$(notdir $(ASM_SOURCES:.s=.o)))
 vpath %.s $(sort $(dir $(ASM_SOURCES)))
 
 $(BUILD_DIR)/%.o: %.c Makefile | $(BUILD_DIR) 
-	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
+	@$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=$(BUILD_DIR)/$(notdir $(<:.c=.lst)) $< -o $@
 
 $(BUILD_DIR)/%.o: %.s Makefile | $(BUILD_DIR)
-	$(AS) -c $(CFLAGS) $< -o $@
+	@$(AS) -c $(CFLAGS) $< -o $@
 
 $(BUILD_DIR)/$(TARGET).elf: $(OBJECTS) Makefile
 	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
@@ -174,8 +174,17 @@ $(BUILD_DIR)/%.bin: $(BUILD_DIR)/%.elf | $(BUILD_DIR)
 	$(BIN) $< $@	
 	
 $(BUILD_DIR):
-	mkdir $@		
-
+	mkdir $@	
+	
+OPENOCD = D:/z-old-file/Phanmemcaidat/openocd-20190828/OpenOCD-20190828-0.10.0/bin/openocd	
+HEX_OUT = $(BUILD_DIR)/$(TARGET).hex
+flash: 
+	$(OPENOCD) -f interface/stlink.cfg\
+			   -f target/stm32f1x.cfg\
+			   -c init -c targets -c "reset halt" \
+			   -c "flash write_image erase $(HEX_OUT)" \
+               -c "verify_image $(HEX_OUT)" \
+               -c "reset run" -c shutdown
 #######################################
 # clean up
 #######################################
