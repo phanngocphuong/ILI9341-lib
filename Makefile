@@ -14,7 +14,7 @@
 # target
 ######################################
 TARGET = ILI9341-lib
-
+LIB = z-lib
 
 ######################################
 # building variables
@@ -51,6 +51,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c \
+$(LIB)/ili9341.c \
 Src/system_stm32f1xx.c  
 
 # ASM sources

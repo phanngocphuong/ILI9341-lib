@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s 			page 1
+ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccRIBHKb.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -37,7 +37,7 @@ ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s 			page 1
   10:Src/main.c    ****   HAL_Init();
   11:Src/main.c    ****   SystemClock_Config();
   12:Src/main.c    ****   MX_GPIO_Init();
-  13:Src/main.c    **** 
+  13:Src/main.c    ****   
   14:Src/main.c    ****   while (1)
   15:Src/main.c    ****   {
   16:Src/main.c    ****    
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s 			page 1
   31:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   32:Src/main.c    ****   {
   33:Src/main.c    ****     Error_Handler();
-ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s 			page 2
+ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccRIBHKb.s 			page 2
 
 
   34:Src/main.c    ****   }
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s 			page 1
   53 0016 9A69     		ldr	r2, [r3, #24]
   54 0018 42F02002 		orr	r2, r2, #32
   55 001c 9A61     		str	r2, [r3, #24]
-ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s 			page 3
+ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccRIBHKb.s 			page 3
 
 
   56              		.loc 1 60 3 view .LVU9
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s 			page 1
  107              		.syntax unified
  108              		.thumb
  109              		.thumb_func
-ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s 			page 4
+ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccRIBHKb.s 			page 4
 
 
  110              		.fpu softvfp
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s 			page 1
  153              		.loc 1 30 3 is_stmt 1 view .LVU33
   31:Src/main.c    ****   {
  154              		.loc 1 31 3 view .LVU34
-ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s 			page 5
+ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccRIBHKb.s 			page 5
 
 
   31:Src/main.c    ****   {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s 			page 1
  196              		.fpu softvfp
  198              	main:
  199              	.LFB66:
-ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s 			page 6
+ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccRIBHKb.s 			page 6
 
 
    8:Src/main.c    **** 
@@ -320,7 +320,7 @@ ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s 			page 1
  213              		.loc 1 11 3 view .LVU51
  214 0006 FFF7FEFF 		bl	SystemClock_Config
  215              	.LVL4:
-  12:Src/main.c    **** 
+  12:Src/main.c    ****   
  216              		.loc 1 12 3 view .LVU52
  217 000a FFF7FEFF 		bl	MX_GPIO_Init
  218              	.LVL5:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s 			page 1
  242 0000 7047     		bx	lr
  243              		.cfi_endproc
  244              	.LFE69:
-ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s 			page 7
+ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccRIBHKb.s 			page 7
 
 
  246              		.text
@@ -377,20 +377,20 @@ ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s 			page 1
  259              		.file 13 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
  260              		.file 14 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
  261              		.file 15 "<built-in>"
-ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s 			page 8
+ARM GAS  C:\Users\phuong\AppData\Local\Temp\ccRIBHKb.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s:16     .text.MX_GPIO_Init:00000000 $t
-C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s:23     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s:100    .text.MX_GPIO_Init:00000050 $d
-C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s:105    .text.SystemClock_Config:00000000 $t
-C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s:112    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s:191    .text.main:00000000 $t
-C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s:198    .text.main:00000000 main
-C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s:227    .text.Error_Handler:00000000 $t
-C:\Users\phuong\AppData\Local\Temp\ccD3MtEm.s:234    .text.Error_Handler:00000000 Error_Handler
+C:\Users\phuong\AppData\Local\Temp\ccRIBHKb.s:16     .text.MX_GPIO_Init:00000000 $t
+C:\Users\phuong\AppData\Local\Temp\ccRIBHKb.s:23     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\phuong\AppData\Local\Temp\ccRIBHKb.s:100    .text.MX_GPIO_Init:00000050 $d
+C:\Users\phuong\AppData\Local\Temp\ccRIBHKb.s:105    .text.SystemClock_Config:00000000 $t
+C:\Users\phuong\AppData\Local\Temp\ccRIBHKb.s:112    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\phuong\AppData\Local\Temp\ccRIBHKb.s:191    .text.main:00000000 $t
+C:\Users\phuong\AppData\Local\Temp\ccRIBHKb.s:198    .text.main:00000000 main
+C:\Users\phuong\AppData\Local\Temp\ccRIBHKb.s:227    .text.Error_Handler:00000000 $t
+C:\Users\phuong\AppData\Local\Temp\ccRIBHKb.s:234    .text.Error_Handler:00000000 Error_Handler
 
 UNDEFINED SYMBOLS
 memset

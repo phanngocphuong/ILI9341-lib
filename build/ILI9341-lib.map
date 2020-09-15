@@ -415,6 +415,25 @@ Discarded input sections
  .debug_frame   0x00000000      0x1c8 build/stm32f1xx_hal_flash_ex.o
  .ARM.attributes
                 0x00000000       0x2d build/stm32f1xx_hal_flash_ex.o
+ .text          0x00000000        0x0 build/ili9341.o
+ .data          0x00000000        0x0 build/ili9341.o
+ .bss           0x00000000        0x0 build/ili9341.o
+ .text.ili9341_PinSetup
+                0x00000000       0x98 build/ili9341.o
+ .text.ili9341_Init
+                0x00000000        0x8 build/ili9341.o
+ .debug_info    0x00000000      0xd5f build/ili9341.o
+ .debug_abbrev  0x00000000      0x239 build/ili9341.o
+ .debug_loc     0x00000000       0x58 build/ili9341.o
+ .debug_aranges
+                0x00000000       0x28 build/ili9341.o
+ .debug_ranges  0x00000000       0x18 build/ili9341.o
+ .debug_line    0x00000000      0x315 build/ili9341.o
+ .debug_str     0x00000000      0x6ed build/ili9341.o
+ .comment       0x00000000       0x77 build/ili9341.o
+ .debug_frame   0x00000000       0x58 build/ili9341.o
+ .ARM.attributes
+                0x00000000       0x2d build/ili9341.o
  .text          0x00000000        0x0 build/system_stm32f1xx.o
  .data          0x00000000        0x0 build/system_stm32f1xx.o
  .bss           0x00000000        0x0 build/system_stm32f1xx.o
@@ -493,6 +512,7 @@ LOAD build/stm32f1xx_hal_cortex.o
 LOAD build/stm32f1xx_hal_pwr.o
 LOAD build/stm32f1xx_hal_flash.o
 LOAD build/stm32f1xx_hal_flash_ex.o
+LOAD build/ili9341.o
 LOAD build/system_stm32f1xx.o
 LOAD build/startup_stm32f103xb.o
 LOAD c:/program files (x86)/gnu tools arm embedded/8 2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a
@@ -985,11 +1005,13 @@ HAL_GPIO_DeInit                                   build/stm32f1xx_hal_gpio.o
 HAL_GPIO_EXTI_Callback                            build/stm32f1xx_hal_gpio.o
 HAL_GPIO_EXTI_IRQHandler                          build/stm32f1xx_hal_gpio.o
 HAL_GPIO_Init                                     build/stm32f1xx_hal_gpio.o
+                                                  build/ili9341.o
                                                   build/stm32f1xx_hal_rcc.o
 HAL_GPIO_LockPin                                  build/stm32f1xx_hal_gpio.o
 HAL_GPIO_ReadPin                                  build/stm32f1xx_hal_gpio.o
 HAL_GPIO_TogglePin                                build/stm32f1xx_hal_gpio.o
 HAL_GPIO_WritePin                                 build/stm32f1xx_hal_gpio.o
+                                                  build/ili9341.o
 HAL_GetDEVID                                      build/stm32f1xx_hal.o
 HAL_GetHalVersion                                 build/stm32f1xx_hal.o
 HAL_GetREVID                                      build/stm32f1xx_hal.o
@@ -1147,6 +1169,8 @@ exit                                              c:/program files (x86)/gnu too
                                                   c:/program files (x86)/gnu tools arm embedded/8 2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
 g_pfnVectors                                      build/startup_stm32f103xb.o
 hardware_init_hook                                c:/program files (x86)/gnu tools arm embedded/8 2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+ili9341_Init                                      build/ili9341.o
+ili9341_PinSetup                                  build/ili9341.o
 main                                              build/main.o
                                                   build/startup_stm32f103xb.o
                                                   c:/program files (x86)/gnu tools arm embedded/8 2019-q3-update/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o

@@ -1,0 +1,276 @@
+ARM GAS  C:\Users\phuong\AppData\Local\Temp\cckvnaKk.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"ili9341.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.section	.text.ili9341_PinSetup,"ax",%progbits
+  16              		.align	1
+  17              		.global	ili9341_PinSetup
+  18              		.arch armv7-m
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu softvfp
+  24              	ili9341_PinSetup:
+  25              	.LFB66:
+  26              		.file 1 "z-lib/ili9341.c"
+   1:z-lib/ili9341.c **** #include "ili9341.h"
+   2:z-lib/ili9341.c **** 
+   3:z-lib/ili9341.c **** void ili9341_PinSetup(void) {
+  27              		.loc 1 3 29 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 16
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+  32              	.LCFI0:
+  33              		.cfi_def_cfa_offset 20
+  34              		.cfi_offset 4, -20
+  35              		.cfi_offset 5, -16
+  36              		.cfi_offset 6, -12
+  37              		.cfi_offset 7, -8
+  38              		.cfi_offset 14, -4
+  39 0002 85B0     		sub	sp, sp, #20
+  40              	.LCFI1:
+  41              		.cfi_def_cfa_offset 40
+   4:z-lib/ili9341.c ****     GPIO_InitTypeDef GPIO_InitStruct = {0};
+  42              		.loc 1 4 5 view .LVU1
+  43              		.loc 1 4 22 is_stmt 0 view .LVU2
+  44 0004 0025     		movs	r5, #0
+  45 0006 0095     		str	r5, [sp]
+  46 0008 0195     		str	r5, [sp, #4]
+  47 000a 0295     		str	r5, [sp, #8]
+  48 000c 0395     		str	r5, [sp, #12]
+   5:z-lib/ili9341.c **** 
+   6:z-lib/ili9341.c ****     /**
+   7:z-lib/ili9341.c ****      * init pin RS
+   8:z-lib/ili9341.c ****      * **/
+   9:z-lib/ili9341.c ****     HAL_GPIO_WritePin(RS_Port,RS, GPIO_PIN_RESET);
+  49              		.loc 1 9 5 is_stmt 1 view .LVU3
+ARM GAS  C:\Users\phuong\AppData\Local\Temp\cckvnaKk.s 			page 2
+
+
+  50 000e 214E     		ldr	r6, .L3
+  51 0010 2A46     		mov	r2, r5
+  52 0012 0421     		movs	r1, #4
+  53 0014 3046     		mov	r0, r6
+  54 0016 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  55              	.LVL0:
+  10:z-lib/ili9341.c ****     GPIO_InitStruct.Pin = RS;
+  56              		.loc 1 10 5 view .LVU4
+  57              		.loc 1 10 25 is_stmt 0 view .LVU5
+  58 001a 0423     		movs	r3, #4
+  59 001c 0093     		str	r3, [sp]
+  11:z-lib/ili9341.c ****     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  60              		.loc 1 11 5 is_stmt 1 view .LVU6
+  61              		.loc 1 11 26 is_stmt 0 view .LVU7
+  62 001e 0127     		movs	r7, #1
+  63 0020 0197     		str	r7, [sp, #4]
+  12:z-lib/ili9341.c ****     GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  64              		.loc 1 12 5 is_stmt 1 view .LVU8
+  65              		.loc 1 12 26 is_stmt 0 view .LVU9
+  66 0022 0224     		movs	r4, #2
+  67 0024 0294     		str	r4, [sp, #8]
+  13:z-lib/ili9341.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  68              		.loc 1 13 5 is_stmt 1 view .LVU10
+  69              		.loc 1 13 27 is_stmt 0 view .LVU11
+  70 0026 0394     		str	r4, [sp, #12]
+  14:z-lib/ili9341.c ****     HAL_GPIO_Init(RS_Port, &GPIO_InitStruct);
+  71              		.loc 1 14 5 is_stmt 1 view .LVU12
+  72 0028 6946     		mov	r1, sp
+  73 002a 3046     		mov	r0, r6
+  74 002c FFF7FEFF 		bl	HAL_GPIO_Init
+  75              	.LVL1:
+  15:z-lib/ili9341.c **** 
+  16:z-lib/ili9341.c ****     /**
+  17:z-lib/ili9341.c ****      * init pin RES
+  18:z-lib/ili9341.c ****      * **/
+  19:z-lib/ili9341.c ****     HAL_GPIO_WritePin(RES_Port,RES, GPIO_PIN_RESET);
+  76              		.loc 1 19 5 view .LVU13
+  77 0030 2A46     		mov	r2, r5
+  78 0032 4FF48061 		mov	r1, #1024
+  79 0036 3046     		mov	r0, r6
+  80 0038 FFF7FEFF 		bl	HAL_GPIO_WritePin
+  81              	.LVL2:
+  20:z-lib/ili9341.c ****     GPIO_InitStruct.Pin = RES;
+  82              		.loc 1 20 5 view .LVU14
+  83              		.loc 1 20 25 is_stmt 0 view .LVU15
+  84 003c 4FF48063 		mov	r3, #1024
+  85 0040 0093     		str	r3, [sp]
+  21:z-lib/ili9341.c ****     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  86              		.loc 1 21 5 is_stmt 1 view .LVU16
+  87              		.loc 1 21 26 is_stmt 0 view .LVU17
+  88 0042 0197     		str	r7, [sp, #4]
+  22:z-lib/ili9341.c ****     GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  89              		.loc 1 22 5 is_stmt 1 view .LVU18
+  90              		.loc 1 22 26 is_stmt 0 view .LVU19
+  91 0044 0294     		str	r4, [sp, #8]
+  23:z-lib/ili9341.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  92              		.loc 1 23 5 is_stmt 1 view .LVU20
+ARM GAS  C:\Users\phuong\AppData\Local\Temp\cckvnaKk.s 			page 3
+
+
+  93              		.loc 1 23 27 is_stmt 0 view .LVU21
+  94 0046 0394     		str	r4, [sp, #12]
+  24:z-lib/ili9341.c ****     HAL_GPIO_Init(RES_Port, &GPIO_InitStruct);
+  95              		.loc 1 24 5 is_stmt 1 view .LVU22
+  96 0048 6946     		mov	r1, sp
+  97 004a 3046     		mov	r0, r6
+  98 004c FFF7FEFF 		bl	HAL_GPIO_Init
+  99              	.LVL3:
+  25:z-lib/ili9341.c **** 
+  26:z-lib/ili9341.c ****     /**
+  27:z-lib/ili9341.c ****      * init pin CS
+  28:z-lib/ili9341.c ****      * **/
+  29:z-lib/ili9341.c ****     HAL_GPIO_WritePin(CS_Port,CS, GPIO_PIN_RESET);
+ 100              		.loc 1 29 5 view .LVU23
+ 101 0050 2A46     		mov	r2, r5
+ 102 0052 4FF40061 		mov	r1, #2048
+ 103 0056 3046     		mov	r0, r6
+ 104 0058 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 105              	.LVL4:
+  30:z-lib/ili9341.c ****     GPIO_InitStruct.Pin = CS;
+ 106              		.loc 1 30 5 view .LVU24
+ 107              		.loc 1 30 25 is_stmt 0 view .LVU25
+ 108 005c 4FF40063 		mov	r3, #2048
+ 109 0060 0093     		str	r3, [sp]
+  31:z-lib/ili9341.c ****     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 110              		.loc 1 31 5 is_stmt 1 view .LVU26
+ 111              		.loc 1 31 26 is_stmt 0 view .LVU27
+ 112 0062 0197     		str	r7, [sp, #4]
+  32:z-lib/ili9341.c ****     GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+ 113              		.loc 1 32 5 is_stmt 1 view .LVU28
+ 114              		.loc 1 32 26 is_stmt 0 view .LVU29
+ 115 0064 0294     		str	r4, [sp, #8]
+  33:z-lib/ili9341.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 116              		.loc 1 33 5 is_stmt 1 view .LVU30
+ 117              		.loc 1 33 27 is_stmt 0 view .LVU31
+ 118 0066 0394     		str	r4, [sp, #12]
+  34:z-lib/ili9341.c ****     HAL_GPIO_Init(CS_Port, &GPIO_InitStruct);
+ 119              		.loc 1 34 5 is_stmt 1 view .LVU32
+ 120 0068 6946     		mov	r1, sp
+ 121 006a 3046     		mov	r0, r6
+ 122 006c FFF7FEFF 		bl	HAL_GPIO_Init
+ 123              	.LVL5:
+  35:z-lib/ili9341.c **** 
+  36:z-lib/ili9341.c ****     /**
+  37:z-lib/ili9341.c ****      * init pin LED
+  38:z-lib/ili9341.c ****      * **/
+  39:z-lib/ili9341.c ****     HAL_GPIO_WritePin(LED_Port,LED, GPIO_PIN_RESET);
+ 124              		.loc 1 39 5 view .LVU33
+ 125 0070 A6F58066 		sub	r6, r6, #1024
+ 126 0074 2A46     		mov	r2, r5
+ 127 0076 1021     		movs	r1, #16
+ 128 0078 3046     		mov	r0, r6
+ 129 007a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 130              	.LVL6:
+  40:z-lib/ili9341.c ****     GPIO_InitStruct.Pin = LED;
+ 131              		.loc 1 40 5 view .LVU34
+ 132              		.loc 1 40 25 is_stmt 0 view .LVU35
+ARM GAS  C:\Users\phuong\AppData\Local\Temp\cckvnaKk.s 			page 4
+
+
+ 133 007e 1023     		movs	r3, #16
+ 134 0080 0093     		str	r3, [sp]
+  41:z-lib/ili9341.c ****     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+ 135              		.loc 1 41 5 is_stmt 1 view .LVU36
+ 136              		.loc 1 41 26 is_stmt 0 view .LVU37
+ 137 0082 0197     		str	r7, [sp, #4]
+  42:z-lib/ili9341.c ****     GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+ 138              		.loc 1 42 5 is_stmt 1 view .LVU38
+ 139              		.loc 1 42 26 is_stmt 0 view .LVU39
+ 140 0084 0294     		str	r4, [sp, #8]
+  43:z-lib/ili9341.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 141              		.loc 1 43 5 is_stmt 1 view .LVU40
+ 142              		.loc 1 43 27 is_stmt 0 view .LVU41
+ 143 0086 0394     		str	r4, [sp, #12]
+  44:z-lib/ili9341.c ****     HAL_GPIO_Init(LED_Port, &GPIO_InitStruct);
+ 144              		.loc 1 44 5 is_stmt 1 view .LVU42
+ 145 0088 6946     		mov	r1, sp
+ 146 008a 3046     		mov	r0, r6
+ 147 008c FFF7FEFF 		bl	HAL_GPIO_Init
+ 148              	.LVL7:
+  45:z-lib/ili9341.c **** 
+  46:z-lib/ili9341.c **** }
+ 149              		.loc 1 46 1 is_stmt 0 view .LVU43
+ 150 0090 05B0     		add	sp, sp, #20
+ 151              	.LCFI2:
+ 152              		.cfi_def_cfa_offset 20
+ 153              		@ sp needed
+ 154 0092 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 155              	.L4:
+ 156              		.align	2
+ 157              	.L3:
+ 158 0094 000C0140 		.word	1073810432
+ 159              		.cfi_endproc
+ 160              	.LFE66:
+ 162              		.section	.text.ili9341_Init,"ax",%progbits
+ 163              		.align	1
+ 164              		.global	ili9341_Init
+ 165              		.syntax unified
+ 166              		.thumb
+ 167              		.thumb_func
+ 168              		.fpu softvfp
+ 170              	ili9341_Init:
+ 171              	.LFB67:
+  47:z-lib/ili9341.c **** 
+  48:z-lib/ili9341.c **** void ili9341_Init(void) {
+ 172              		.loc 1 48 25 is_stmt 1 view -0
+ 173              		.cfi_startproc
+ 174              		@ args = 0, pretend = 0, frame = 0
+ 175              		@ frame_needed = 0, uses_anonymous_args = 0
+ 176 0000 08B5     		push	{r3, lr}
+ 177              	.LCFI3:
+ 178              		.cfi_def_cfa_offset 8
+ 179              		.cfi_offset 3, -8
+ 180              		.cfi_offset 14, -4
+  49:z-lib/ili9341.c ****     ili9341_PinSetup();
+ 181              		.loc 1 49 5 view .LVU45
+ 182 0002 FFF7FEFF 		bl	ili9341_PinSetup
+ARM GAS  C:\Users\phuong\AppData\Local\Temp\cckvnaKk.s 			page 5
+
+
+ 183              	.LVL8:
+  50:z-lib/ili9341.c **** }
+ 184              		.loc 1 50 1 is_stmt 0 view .LVU46
+ 185 0006 08BD     		pop	{r3, pc}
+ 186              		.cfi_endproc
+ 187              	.LFE67:
+ 189              		.text
+ 190              	.Letext0:
+ 191              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\8 2019-q3-update\\arm-none-eabi\\include
+ 192              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\8 2019-q3-update\\arm-none-eabi\\include
+ 193              		.file 4 "Drivers/CMSIS/Include/core_cm3.h"
+ 194              		.file 5 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h"
+ 195              		.file 6 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 196              		.file 7 "c:\\program files (x86)\\gnu tools arm embedded\\8 2019-q3-update\\lib\\gcc\\arm-none-eab
+ 197              		.file 8 "c:\\program files (x86)\\gnu tools arm embedded\\8 2019-q3-update\\arm-none-eabi\\include
+ 198              		.file 9 "c:\\program files (x86)\\gnu tools arm embedded\\8 2019-q3-update\\arm-none-eabi\\include
+ 199              		.file 10 "c:\\program files (x86)\\gnu tools arm embedded\\8 2019-q3-update\\arm-none-eabi\\includ
+ 200              		.file 11 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 201              		.file 12 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h"
+ARM GAS  C:\Users\phuong\AppData\Local\Temp\cckvnaKk.s 			page 6
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ili9341.c
+C:\Users\phuong\AppData\Local\Temp\cckvnaKk.s:16     .text.ili9341_PinSetup:00000000 $t
+C:\Users\phuong\AppData\Local\Temp\cckvnaKk.s:24     .text.ili9341_PinSetup:00000000 ili9341_PinSetup
+C:\Users\phuong\AppData\Local\Temp\cckvnaKk.s:158    .text.ili9341_PinSetup:00000094 $d
+C:\Users\phuong\AppData\Local\Temp\cckvnaKk.s:163    .text.ili9341_Init:00000000 $t
+C:\Users\phuong\AppData\Local\Temp\cckvnaKk.s:170    .text.ili9341_Init:00000000 ili9341_Init
+
+UNDEFINED SYMBOLS
+HAL_GPIO_WritePin
+HAL_GPIO_Init
