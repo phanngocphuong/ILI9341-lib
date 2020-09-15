@@ -42,6 +42,7 @@ Src/stm32f1xx_hal_msp.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c \
+Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_spi.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c \
@@ -52,6 +53,7 @@ Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c \
 Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c \
 $(LIB)/ili9341.c \
+$(LIB)/spi.c \
 Src/system_stm32f1xx.c  
 
 # ASM sources
@@ -116,6 +118,7 @@ C_INCLUDES =  \
 -IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy \
 -IDrivers/CMSIS/Device/ST/STM32F1xx/Include \
 -IDrivers/CMSIS/Include \
+-I$(LIB) \
 -IDrivers/CMSIS/Include
 
 
@@ -176,8 +179,8 @@ $(BUILD_DIR)/%.bin: $(BUILD_DIR)/%.elf | $(BUILD_DIR)
 	
 $(BUILD_DIR):
 	mkdir $@	
-	
-OPENOCD = D:/z-old-file/Phanmemcaidat/openocd-20190828/OpenOCD-20190828-0.10.0/bin/openocd	
+
+OPENOCD = D:/phan_men/OpenOCD-20200729-0.10.0/bin/openocd	
 HEX_OUT = $(BUILD_DIR)/$(TARGET).hex
 flash: 
 	$(OPENOCD) -f interface/stlink.cfg\

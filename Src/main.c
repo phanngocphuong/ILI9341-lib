@@ -1,5 +1,6 @@
 
 #include "main.h"
+#include "ili9341.h"
 
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
@@ -10,6 +11,8 @@ int main(void)
   HAL_Init();
   SystemClock_Config();
   MX_GPIO_Init();
+  ili9341_Init();
+  
   
   while (1)
   {
